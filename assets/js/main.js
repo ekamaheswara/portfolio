@@ -32,11 +32,11 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 //         const sectionTop = current.offsetTop - 50;
 //         sectionId = current.getAttribute('id')
 
-//         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-//             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
-//         }else{
-//             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
-//         }
+//         // if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+//         //     document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
+//         // }else{
+//         //     document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
+//         // }
 //     })
 // }
 // window.addEventListener('scroll', scrollActive)
@@ -47,13 +47,13 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-//     reset: true
+    reset: true
 });
 
 sr.reveal('.home__data, .about__img, .education__subtitle, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .timeline-dot, .timeline-items, .timeline-item, .contact__input',{interval: 200}); 
+sr.reveal('.skills__data, .work__img, .timeline-dot, .timeline-items, .timeline-item, .contact__input',{interval: 200});
 
 /*======= SCROLL TOP ======*/
 const scrolltop = document.querySelector(".scrolltop");
@@ -66,4 +66,31 @@ const scrolltop = document.querySelector(".scrolltop");
                     scrolltop.classList.remove("active");
                 }
             })
-            
+
+/*===== Mengirim data ke Google Apps Script =====*/
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyMsAkuPKPLVNncz_OjxUyAvPTD4OXhUf5dvIt169eprkvTSKmcddXkBahO1OclYv_2/exec'
+        const form = document.forms['kontak-form']
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+        const btnAlert = document.querySelector('.my-alert');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            //ketika tombol submit di klik
+            //tampilkan tombol loading, hilangkan tombol kirim
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    //tampilkan tombol kirim, hilangkan tombol loading
+                    btnLoading.classList.toggle('d-none');
+                    btnKirim.classList.toggle('d-none');
+                    //tampilkan alert
+                    btnAlert.classList.toggle('d-none');
+                    //reset form-nya
+                    form.reset();
+                    console.log('Success!', response)
+                })                 
+                .catch(error => console.error('Error!', error.message))
+        })

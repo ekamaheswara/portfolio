@@ -3,13 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">        
         <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="icon" href="assets/img/eka_stikom.jpg">
-
+        <link rel="icon" href="assets/img/favicon.png">
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-
         <title>Portfolio - Eka Satria Maheswara</title>
     </head>
     <body>
@@ -61,12 +59,12 @@
                 <div class="home__data">
                     <h1 class="home__title"><br><span class="home__title-color">Eka Satria Maheswara</span></h1><p class="home__title_2">JUNIOR WEB DEVELOPER</p>
                 
-                    <a href="#" class="button">Download CV</a>
+                    <a href="assets/cv/cv-eka.pdf" download="cv-eka" class="button">Download CV</a>
                 </div>
                 <div class="home__social">
-                    <a href="#" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
-                    <a href="#" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
-                    <a href="#" class="home__social-icon"><i class='bx bx-envelope'></i></a>
+                    <a href="https://www.facebook.com/ekamaheswara" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/ekamaheswara/" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+                    <a href="mailto:ekamaheswara22@gmail.com" class="home__social-icon"><i class='bx bx-envelope'></i></a>
                 </div>
             </section>
 
@@ -90,7 +88,6 @@
             <section class="education section" id="education">
                 <div class="education__container bd-grid">                
                 <h2 class="section-title">Pendidikan</h2>
-                <h2 class="education__subtitle">Pendidikan</h2>
                     
                     <div class="timeline-items">
                         <div class="timeline-item">
@@ -174,18 +171,6 @@
                                 <span class="skills__percentage"></span>
                             </div>
                         </div>
-                        <!-- <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">UX/UI</span>
-                            </div>
-                            <div class="skills__bar skills__ux">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div> -->
                     </div>
                     
                     <div>              
@@ -202,6 +187,9 @@
                     <a href="http://haudhiyahalwathoniyah43.sch.id" target="_blank" class="work__img">
                         <img src="assets/img/work7.jpg" alt="">
                     </a>                    
+                    <a href="https://ekamaheswara.github.io/portfolio" class="work__img">
+                        <img src="assets/img/work10.jpg" alt="">
+                    </a>                    
                 </div>
             </section>
 
@@ -210,11 +198,20 @@
                 <h2 class="section-title">Kontak</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Nama" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Kirim" class="contact__button button">
+                    <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                        <strong>Terima Kasih!</strong> Pesan Anda Sudah Kami Terima.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <form name="kontak-form" class="contact__form">
+                        <input name="Nama" type="text" placeholder="Nama" class="contact__input" required>
+                        <input name="Email" type="email" placeholder="Email" class="contact__input" required>
+                        <textarea name="Pesan" placeholder="Pesan" cols="0" rows="10" class="contact__input" required></textarea>
+
+                        <button type="submit" class="contact__button button btn-kirim">Kirim</button>
+                        <button class="contact__button button btn-loading d-none" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                            <span role="status">Loading...</span>
+                        </button>
                     </form>
                 </div>
             </section>
@@ -229,14 +226,15 @@
         <footer class="footer">
             <p class="footer__title">Eka Satria Maheswara</p>
             <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bx-envelope' ></i></a>
+                <a href="https://www.facebook.com/ekamaheswara" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://www.instagram.com/ekamaheswara" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="mailto:ekamaheswara22@gmail.com" class="footer__icon"><i class='bx bx-envelope' ></i></a>
                 <!-- <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a> -->
             </div>
             <p class="footer__copy">2023 &#169; Eka Satria Maheswara</p>
         </footer>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <!--===== SCROLL REVEAL =====-->
         <script src="https://unpkg.com/scrollreveal"></script>
 

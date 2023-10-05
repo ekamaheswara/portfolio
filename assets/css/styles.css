@@ -230,6 +230,15 @@ img {
   font-size: var(--big-font-size);
 }
 
+.home__title-color {
+  transition: 0.3s;
+  cursor: default;
+}
+
+.home__title-color:hover {
+  color: var(--first-color);
+}
+
 .home__title_2 {
   font-size: var(-normal-font-size);
   margin-bottom: var(--mb-5);
@@ -237,12 +246,6 @@ img {
 }
 .home__title-color {
   color: var(--second-color);
-}
-
-.home__title-color:hover {
-  color: var(--first-color);
-  transition: all 0.3s;
-  cursor: default;
 }
 
 .home__social {
@@ -526,6 +529,19 @@ img {
   font-size: var(--normal-font-size);
   cursor: pointer;
   margin-left: auto;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
 }
 
 /* ===== FOOTER =====*/
